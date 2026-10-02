@@ -13,7 +13,9 @@ the panel. This is the base that takes real work.
   because it is small enough to disappear behind the panel, and 0.6 A proved to be enough at a
   normal backlight. That is one panel at one brightness rather than a specification met, so if you
   run the screen bright, or a panel starts restarting by itself, this is the first thing to suspect.
-- **Two flexible mains rated conductors**, blue and brown.
+- **Two flexible mains rated conductors**, blue and brown. 0.75 mm² is a comfortable choice:
+  the current here is small, so the size is about handling it and filling the terminals rather
+  than about heat.
 - **Two Wago 221-2411** lever connectors.
 - **Heatshrink** for the soldered joints.
 - **The 4-pin cable that came with the panel**, the one meant for the expansion header. It fits
