@@ -14,7 +14,7 @@ configured — you pick the cards for a room in the app, and they appear on the 
 ## What you need
 
 1. A supported board — see [Boards](#boards) below. Nothing is soldered, nothing is
-   modified; it arrives ready and runs on USB-C power.
+   modified; it arrives ready and runs from a USB supply, with the cable that comes with it.
 2. A Homey Pro with the **Wear OS Controller** app installed.
 3. One cable moment, once per panel. After that a panel updates itself from Homey.
 
@@ -27,7 +27,7 @@ way to reach it. That first image goes on over USB — and never again, because 
 updates come from Homey over Wi-Fi.
 
 **The easy way:** open the [web flasher](https://kaohlive.github.io/homey-wallpanel/flash/),
-plug the panel into your computer with a USB-C cable, and click Install. It works in Chrome
+plug the panel into your computer with the cable that came with it, and click Install. It works in Chrome
 and Edge on Windows, macOS and Linux; nothing to install.
 
 **The other way:** download the `-factory.bin` for your board from
@@ -72,7 +72,7 @@ checks it against a hash that came from Homey over a signed connection, and rest
 
 | Board | id | What it is | Status |
 | --- | --- | --- | --- |
-| [Elecrow CrowPanel 2.1" rotary](https://www.elecrow.com/crowpanel-esp32-display-2-1-inch-hmi-display-round-screen-touch-lcd.html) | `crowpanel21` | ESP32-S3, 480×480 round IPS touchscreen with a rotary knob around it, USB-C | Supported |
+| [Elecrow CrowPanel 2.1" rotary](https://www.elecrow.com/crowpanel-esp32-display-2-1-inch-hmi-display-round-screen-touch-lcd.html) | `crowpanel21` | ESP32-S3, 480×480 round IPS touchscreen with a rotary knob around it, power and USB on one 4-pin connector | Supported |
 
 Only a board listed here has an image in a release, and Homey will never offer a panel
 firmware built for different hardware. If you would like another display supported, open an
@@ -81,8 +81,10 @@ differs is the screen driver, the touch controller and the pin map.
 
 ## Enclosures
 
-3D models to print live in [`models/`](models/). They are STEP and STL; print them in any
-material that lives happily behind a mains supply.
+3D models to print live in [`models/`](models/), in PETG. A cup holds the panel and twists into a
+base: a flush mount that drops into a wall box and makes its own 5 V behind the panel, or a stand
+that holds it on a desk and runs from a USB adapter. Twisting the cup off moves the same panel
+between them.
 
 ## Privacy and what runs where
 
