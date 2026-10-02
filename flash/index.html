@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Flash a Homey wall panel</title>
+  <style>
+    :root {
+      --ink: #14161a;
+      --ink-soft: #5c636d;
+      --ground: #ffffff;
+      --raised: #f5f7f9;
+      --line: #e2e6ea;
+      --accent: #1e6fd9;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #eef1f4;
+        --ink-soft: #9aa2ac;
+        --ground: #15171a;
+        --raised: #1d2024;
+        --line: #2c3036;
+        --accent: #5aa7ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 16px 64px;
+      background: var(--ground);
+      color: var(--ink);
+      font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.2; letter-spacing: -0.02em; text-wrap: balance; }
+    h2 { margin: 0 0 8px; font-size: 19px; line-height: 1.3; }
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
+    .lead { color: var(--ink-soft); }
+    a { color: var(--accent); }
+    .board {
+      background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 20px;
+    }
+    .board .meta { color: var(--ink-soft); font-size: 15px; margin-bottom: 16px; }
+    ol { margin: 0; padding-left: 20px; }
+    li + li { margin-top: 6px; }
+    .note {
+      border-left: 3px solid var(--line); padding-left: 14px; color: var(--ink-soft); font-size: 15px;
+    }
+    esp-web-install-button { display: block; }
+    /* Shown only where the browser cannot flash at all, which the component decides. */
+    .unsupported { color: var(--ink-soft); font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Flash a Homey wall panel</h1>
+      <p class="lead">Plug the panel into this computer with the cable that came with it and press Install.
+        It takes about a minute, and it is the only time a panel ever needs a cable — after
+        this, updates come from Homey over Wi-Fi.</p>
+    </header>
+
+    <section class="board">
+      <h2>Elecrow CrowPanel 2.1&quot; rotary</h2>
+      <div class="meta">ESP32-S3 · 480×480 round touchscreen with a knob · board id <code>crowpanel21</code></div>
+      <esp-web-install-button manifest="crowpanel21.json">
+        <button slot="activate">Install firmware</button>
+        <span slot="unsupported" class="unsupported">This browser cannot talk to USB devices.
+          Use Chrome or Edge on a computer — phones and tablets cannot do this.</span>
+        <span slot="not-allowed" class="unsupported">Flashing needs a secure connection (https).</span>
+      </esp-web-install-button>
+    </section>
+
+    <section>
+      <h2>Then what?</h2>
+      <ol>
+        <li>Install <strong>Wear OS Controller</strong> on your Homey if it is not there yet: that
+          is where a panel gets its cards, and where the pairing code below comes from. Panels need
+          version 1.34 or newer, so for now take the
+          <a href="https://homey.app/a/com.kaoh.wearoscontroller/test/">test version</a>.</li>
+        <li>The panel restarts and shows <strong>Wi-Fi setup</strong>, with a network name and
+          an eight-digit password on screen.</li>
+        <li>Join that network with a phone. The setup page opens by itself; otherwise go to
+          <code>192.168.4.1</code>.</li>
+        <li>Pick your network, type its password, and paste the pairing code from Homey
+          (Wear OS Controller → app settings → Copy pairing code).</li>
+        <li>Add the panel as a device in Homey, then open Repair on it to choose the cards
+          it shows.</li>
+      </ol>
+    </section>
+
+    <section class="note">
+      <p>Nothing here is sent anywhere: the image is downloaded from this page and written to
+        the board by your browser. The panel never learns your Wi-Fi password from Homey —
+        you type it into the panel itself.</p>
+      <p>Prefer a command line? Every image is on the
+        <a href="https://github.com/kaohlive/homey-wallpanel/releases">releases page</a>.</p>
+    </section>
+  </div>
+
+  <!-- Pinned to a major version: this script talks to the serial port, so it does not get to
+       change under us without anyone looking. -->
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</body>
+</html>
