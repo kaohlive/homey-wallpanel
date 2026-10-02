@@ -11,11 +11,29 @@ configured — you pick the cards for a room in the app, and they appear on the 
 > firmware is built per board, so a panel is only ever offered an image built for its own
 > hardware.
 
+## Experimenting early
+
+A panel works and hangs on a wall here, but this is young. The Homey side moves most weeks and
+panel changes land in the test version first, so trying one now means living with that. Two
+things make it a soft landing: a panel updates itself from Homey, so the cable moment really is
+once, and nothing on it is configured by hand — a panel that shows the wrong thing is one
+**Repair** away from right.
+
+Worth telling us about, in [issues](https://github.com/kaohlive/homey-wallpanel/issues): a card
+that reads wrong for a device you own, a device whose controls do not fit a ring sensibly, a
+panel that keeps dropping off Wi-Fi, or anything about the printed parts. Say which board, which
+firmware version (it is on the panel's device page in Homey) and which app version. A photo of
+the screen usually says more than a paragraph.
+
 ## What you need
 
 1. A supported board — see [Boards](#boards) below. Nothing is soldered, nothing is
    modified; it arrives ready and runs from a USB supply, with the cable that comes with it.
-2. A Homey Pro with the **Wear OS Controller** app installed.
+2. A Homey Pro with the **Wear OS Controller** app. Panels need version 1.34 or newer: while
+   that is in review, install the
+   [test version](https://homey.app/a/com.kaoh.wearoscontroller/test/) — the same app, newest
+   build. Once it is through, the
+   [store version](https://homey.app/a/com.kaoh.wearoscontroller/) is enough.
 3. One cable moment, once per panel. After that a panel updates itself from Homey.
 
 ## Getting one going
