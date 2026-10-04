@@ -29,11 +29,11 @@ the screen usually says more than a paragraph.
 
 1. A supported board — see [Boards](#boards) below. Nothing is soldered, nothing is
    modified; it arrives ready and runs from a USB supply, with the cable that comes with it.
-2. A Homey Pro with the **Wear OS Controller** app. Panels need version 1.34 or newer: while
-   that is in review, install the
+2. A Homey Pro with the **Wear OS Controller** app, and for now that means the
    [test version](https://homey.app/a/com.kaoh.wearoscontroller/test/) — the same app, newest
-   build. Once it is through, the
-   [store version](https://homey.app/a/com.kaoh.wearoscontroller/) is enough.
+   build. Take it before you flash: panel firmware from 1.24.0 on refuses an answer that is not
+   signed by your Homey, and only app 1.35.0 and newer signs one. A panel flashed today and
+   pointed at an older app will simply show nothing.
 3. One cable moment, once per panel. After that a panel updates itself from Homey.
 
 ## Getting one going
