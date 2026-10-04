@@ -102,8 +102,10 @@
     </section>
   </div>
 
-  <!-- Pinned to a major version: this script talks to the serial port, so it does not get to
-       change under us without anyone looking. -->
-  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <!-- This script drives the serial port and writes to your board, so it ships with the page
+       rather than being fetched from someone else's server while you are about to use it. The
+       release that builds this page unpacks one pinned version of esp-web-tools, checks it
+       against the hash npm published for it, and copies it in beside this file. -->
+  <script type="module" src="vendor/esp-web-tools/install-button.js"></script>
 </body>
 </html>
