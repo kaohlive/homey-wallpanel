@@ -6,6 +6,9 @@ Mounting is two printed parts: a **cup** that holds the panel and carries half o
 a **base** it twists into. The cup is always the same, so a panel moves from the wall to a desk
 and back by twisting it off one base and onto another.
 
+![The printed cup around the panel, seated on the base, seen from the
+side](../images/panel-mount.jpg)
+
 A base is more than a printed part. It decides how 5 V reaches the panel, and that differs per
 base, so a base that needs building has its own page next to its print files.
 

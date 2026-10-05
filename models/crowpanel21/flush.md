@@ -5,6 +5,9 @@ wall box, the front sits level with the wall, and the cup with the panel in it t
 bayonet. Nothing stands out from the wall and no cable is in sight, because the 5 V is made behind
 the panel. This is the base that takes real work.
 
+<img src="../../images/panel-mains.jpg" width="420" alt="The mains side of the flush mount:
+live and neutral into two lever connectors, sitting in the printed holder">
+
 ## What you need
 
 - The print, in PETG, and the cup that goes with it. See the [print settings](README.md).

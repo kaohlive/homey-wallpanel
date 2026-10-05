@@ -4,6 +4,9 @@ A €48 round touchscreen on the wall that drives a room in Homey: lights, the t
 moods, music, energy, an alarm clock, who is home. Swipe between cards, turn the ring to
 set a value, press the knob to switch.
 
+![A round panel on a desk stand showing a colour wheel for the living room lights, the ring
+lit in the colours it can set](images/panel-colour.jpg)
+
 It is a companion to the **Wear OS Controller** app for Homey, which is where a panel is
 configured — you pick the cards for a room in the app, and they appear on the wall.
 
@@ -67,6 +70,9 @@ A panel with nothing saved opens its own Wi-Fi network:
 1. The screen shows **Wi-Fi setup**, a network name (`WallPanel-XXXX`) and an eight-digit
    password. That password is different every time and only shown on the panel, so setting
    one up means standing in front of it.
+
+   <img src="images/panel-wifi-setup.jpg" width="380" alt="The panel showing its Wi-Fi setup
+   screen: a QR code, the network password underneath it, and the network name">
 2. Join that network with a phone. The setup page opens by itself; otherwise go to
    `192.168.4.1`.
 3. Pick your network, type its password, and paste the pairing code from
@@ -82,6 +88,9 @@ five seconds — so changing your Wi-Fi password never means fetching a cable.
 In Homey, add a device from the Wear OS Controller app and pick your panel from the list.
 Then open **Repair** on that device to choose what it shows: a room, and the cards for it.
 Changes land on the wall within a few seconds.
+
+<img src="images/panel-warmth.jpg" width="380" alt="A card for the living room lights showing
+Warm, with the ring at 60 per cent and buttons for dim, mode and warmth">
 
 Firmware updates appear on the same device page, as a button. The panel downloads the image,
 checks it against a hash that came from Homey over a signed connection, and restarts.
@@ -103,6 +112,9 @@ differs is the screen driver, the touch controller and the pin map.
 base: a flush mount that drops into a wall box and makes its own 5 V behind the panel, or a stand
 that holds it on a desk and runs from a USB adapter. Twisting the cup off moves the same panel
 between them.
+
+![The panel in its printed cup, twisted into the desk stand, running from a USB
+cable](images/panel-deskstand.jpg)
 
 ## Privacy and what runs where
 
