@@ -4,8 +4,8 @@ A €48 round touchscreen on the wall that drives a room in Homey: lights, the t
 moods, music, energy, an alarm clock, who is home. Swipe between cards, turn the ring to
 set a value, press the knob to switch.
 
-![A round panel on a desk stand showing a colour wheel for the living room lights, the ring
-lit in the colours it can set](images/panel-colour.jpg)
+<img src="images/panel-colour.jpg" width="480" alt="A round panel showing a colour wheel for
+the living room lights: Mixed, turn to set them all, with buttons for dim, mode and warmth">
 
 It is a companion to the **Wear OS Controller** app for Homey, which is where a panel is
 configured — you pick the cards for a room in the app, and they appear on the wall.
