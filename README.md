@@ -11,6 +11,11 @@ the living room lights: Mixed, turn to set them all, with buttons for dim, mode 
      its own editor, so it cannot be committed to this repository: open this file on
      github.com, put the cursor on this line and drag the .mp4 in. -->
 
+
+https://github.com/user-attachments/assets/116d14b9-548b-4660-b3fe-a709d894e5c8
+
+
+
 It is a companion to the **Wear OS Controller** app for Homey, which is where a panel is
 configured — you pick the cards for a room in the app, and they appear on the wall.
 
