@@ -3,7 +3,7 @@
 Board id `crowpanel21`. An ESP32-S3 with a 480×480 round IPS touchscreen and a rotary
 encoder ring around it. Nothing has to be soldered or modified.
 
-- **Where to buy:** [Elecrow](https://www.elecrow.com/crowpanel-esp32-display-2-1-inch-hmi-display-round-screen-touch-lcd.html)
+- **Where to buy:** [Elecrow](https://www.elecrow.com/crowpanel-2-1inch-hmi-esp32-rotary-display-480-480-ips-round-touch-knob-screen.html)
   sells it directly; it also shows up on the usual marketplaces.
 - **What it runs:** ESP32-S3 with 16 MB flash and 8 MB PSRAM, ST7701 display controller,
   capacitive touch, rotary encoder with a push.

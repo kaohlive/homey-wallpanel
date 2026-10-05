@@ -7,6 +7,10 @@ set a value, press the knob to switch.
 <img src="images/panel-colour.jpg" width="480" alt="A round panel showing a colour wheel for
 the living room lights: Mixed, turn to set them all, with buttons for dim, mode and warmth">
 
+<!-- A ninety-second demo belongs here. GitHub only plays a video that was uploaded through
+     its own editor, so it cannot be committed to this repository: open this file on
+     github.com, put the cursor on this line and drag the .mp4 in. -->
+
 It is a companion to the **Wear OS Controller** app for Homey, which is where a panel is
 configured — you pick the cards for a room in the app, and they appear on the wall.
 
@@ -99,7 +103,7 @@ checks it against a hash that came from Homey over a signed connection, and rest
 
 | Board | id | What it is | Status |
 | --- | --- | --- | --- |
-| [Elecrow CrowPanel 2.1" rotary](https://www.elecrow.com/crowpanel-esp32-display-2-1-inch-hmi-display-round-screen-touch-lcd.html) | `crowpanel21` | ESP32-S3, 480×480 round IPS touchscreen with a rotary knob around it, power and USB on one 4-pin connector | Supported |
+| [Elecrow CrowPanel 2.1" rotary](https://www.elecrow.com/crowpanel-2-1inch-hmi-esp32-rotary-display-480-480-ips-round-touch-knob-screen.html) | `crowpanel21` | ESP32-S3, 480×480 round IPS touchscreen with a rotary knob around it, power and USB on one 4-pin connector | Supported |
 
 Only a board listed here has an image in a release, and Homey will never offer a panel
 firmware built for different hardware. If you would like another display supported, open an
