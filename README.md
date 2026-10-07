@@ -60,6 +60,11 @@ updates come from Homey over Wi-Fi.
 plug the panel into your computer with the cable that came with it, and click Install. It works in Chrome
 and Edge on Windows, macOS and Linux; nothing to install.
 
+**If a freshly flashed panel stays dark:** open the flasher again, press Install and choose
+**Logs & Console** instead — it opens a serial monitor on the connected panel, in the browser.
+A working panel says `######## Homey wall panel ########` and its id within a few seconds of a
+reset. Paste what it says into an issue; it names the problem far better than "it is black".
+
 **The other way:** download the `-factory.bin` for your board from
 [Releases](https://github.com/kaohlive/homey-wallpanel/releases) and write it with
 [esptool](https://docs.espressif.com/projects/esptool/en/latest/):
