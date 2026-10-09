@@ -1,0 +1,17 @@
+{
+  "name": "Homey wall panel — CrowPanel 2.1\" rotary",
+  "version": "1.31.0",
+  "funding_url": "",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "crowpanel21-factory.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
