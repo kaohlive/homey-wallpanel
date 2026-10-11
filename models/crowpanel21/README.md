@@ -41,6 +41,33 @@ wall gets warm on its own. Whether a stiffer material still clicks has not been 
 PC may simply be too rigid to give, so if you go there, print a cup and a base first and feel it
 before you fit anything to a wall.
 
+## If your printer prints tight or loose
+
+All three parts come from one OpenSCAD file,
+[`homey-panel-crowpanel21-mounts.scad`](homey-panel-crowpanel21-mounts.scad). Set `part` to
+`"cup"`, `"base"` or `"desk"` and export an STL; `"preview"` shows the flush mount assembled in its
+wall box, cut in half.
+
+The bayonet is drawn with clearances that suit one printer. If a cup will not go in, rocks once it
+is in, or turns without a click, these are the numbers to change, in mm, and their names are listed
+again at the top of the file:
+
+| Parameter | Default | What it does |
+| --- | --- | --- |
+| `fit` | 0.30 | Gap all round between the cup and the sleeve. Up if the cup will not go in, down if it rocks |
+| `slack` | 0.35 | Gap in the bayonet slots, along the axis. Up if the twist is stiff |
+| `detent_p` | 0.55 | How far the click bumps stand out. Up for a firmer click, down if it will not turn at all |
+| `desk_fit`, `desk_slack`, `desk_detent_p` | 0.30, 0.22, 0.65 | The same three for the desk stand, which prints tilted and comes out of the printer differently |
+| `hole_d` | 4.0 | The bolt holes in the cup |
+| `clip_slack`, `wago_fit` | 0.45, 0.40 | The holder for the HLK-PM01 and the clamp for the Wago connectors |
+
+Change one at a time, print a cup and a base, and feel it before you change the next. The
+board's own dimensions, for an enclosure of your own, are on the
+[board page](../../boards/crowpanel21/README.md#dimensions-for-designing-your-own-enclosure).
+
+The file renders in any recent OpenSCAD. Set the backend to Manifold (Preferences > Advanced, in
+2024 and newer) and it takes seconds instead of minutes.
+
 ## What they all need
 
 The board wants 5 V at 1 A and the screen is on all day, so whatever feeds it should be something

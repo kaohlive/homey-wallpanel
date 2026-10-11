@@ -15,6 +15,35 @@ encoder ring around it. Nothing has to be soldered or modified.
   [`models/crowpanel21/`](../../models/crowpanel21/) says which supply it is built around and
   how that one is wired.
 
+## Dimensions, for designing your own enclosure
+
+Elecrow gives the panel as **79 × 79 × 30 mm and 80 g**, and publishes the whole assembly,
+board and shell, as a STEP file:
+[`3D file/00-irad-21.stp`](https://github.com/Elecrow-RD/CrowPanel-2.1inch-HMI-ESP32-Rotary-Display-480-480-IPS-Round-Touch-Knob-Screen/tree/master/3D%20file).
+That is the reference to model against. What it does not say is what an enclosure has to leave
+room for, and those are the figures below. They are what the printed
+[cup](../../models/crowpanel21/) is built around, and a panel fits it, so they are proven to fit
+rather than measured to a tenth.
+
+Angles are seen from the front, through the screen: 0° is 3 o'clock, they run anticlockwise, and
+90° is the top of the screen. Seen from the back, left and right swap.
+
+| What | Figure |
+| --- | --- |
+| Back of the panel | goes into a pocket Ø49 mm across and 14 mm deep |
+| Mounting points | three threaded standoffs on a Ø12.2 mm circle, 120° apart, the first at 0°: a triangle pointing right |
+| Screws | M3 fits, through 4 mm clearance holes. Elecrow publishes no figure for the standoffs |
+| Buttons and connector | in the ring between 11 and 23 mm from the centre. A back wall that is solid there will press them |
+| Free spokes | 14 mm wide at 90°, 215° and 315°: the cup's spokes sit there and clear everything |
+| Power and data | one 4-pin MX1.25 header, at the bottom (270°). The plug is about 6.3 × 4.5 mm, so a 9 mm hole lets it through |
+
+The panel has a top. An enclosure that can be fitted a third of a turn out will be, so mark
+north on it; the cup carries a notch in its rim and an arrow on its back for that.
+
+The [OpenSCAD source](../../models/crowpanel21/homey-panel-crowpanel21-mounts.scad) of the
+printed parts holds all of these as named parameters, so it is also the quickest way to start a
+design of your own.
+
 ## Flashing
 
 Use the [web flasher](https://kaohlive.github.io/homey-wallpanel/flash/), or write the

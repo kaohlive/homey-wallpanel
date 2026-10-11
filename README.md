@@ -127,6 +127,11 @@ base: a flush mount that drops into a wall box and makes its own 5 V behind the 
 that holds it on a desk and runs from a USB adapter. Twisting the cup off moves the same panel
 between them.
 
+Designing your own? The [board page](boards/crowpanel21/README.md#dimensions-for-designing-your-own-enclosure)
+lists what an enclosure has to leave room for, and the parts come with their
+[OpenSCAD source](models/crowpanel21/homey-panel-crowpanel21-mounts.scad), so a printer that
+prints a little loose or tight is one parameter away from a good fit.
+
 ![The panel in its printed cup, twisted into the desk stand, running from a USB
 cable](images/panel-deskstand.jpg)
 

@@ -28,7 +28,9 @@ Print files are named `homey-panel-<board>-<part>-v<n>`, lowercase, so a file st
 once it sits in a downloads folder. The `v<n>` is the revision of that part and has nothing to do
 with a firmware version: it goes up whenever the geometry changes, so you can tell which one you
 printed. STL is what you print. Where a STEP is published it carries the same basename, so the
-part can be changed in a CAD package. Pages like `flush.md` are the build instructions and are not
-versioned.
+part can be changed in a CAD package. Where the parts come from an OpenSCAD file, that is
+published as `homey-panel-<board>-mounts.scad`, without a version: one file makes all the parts
+of a board, and its header says which revision of each it makes. Pages like `flush.md` are the
+build instructions and are not versioned.
 
 These models are CC BY-SA 4.0; see the licence in the repository root.
