@@ -52,6 +52,13 @@
     esp-web-install-button { display: block; }
     /* Shown only where the browser cannot flash at all, which the component decides. */
     .unsupported { color: var(--ink-soft); font-size: 15px; }
+    .changes { list-style: none; padding: 0; margin: 0; }
+    .changes li + li { margin-top: 12px; }
+    .changes .ver { font-weight: 600; }
+    .changes .date { color: var(--ink-soft); font-size: 15px; margin-left: 6px; }
+    .changes p { margin: 2px 0 0; }
+    details summary { cursor: pointer; color: var(--accent); margin-top: 12px; }
+    details .changes { margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -65,7 +72,7 @@
 
     <section class="board">
       <h2>Elecrow CrowPanel 2.1&quot; rotary</h2>
-      <div class="meta">ESP32-S3 · 480×480 round touchscreen with a knob · board id <code>crowpanel21</code></div>
+      <div class="meta">ESP32-S3 · 480×480 round touchscreen with a knob · board id <code>crowpanel21</code><span id="fw-version"></span></div>
       <esp-web-install-button manifest="crowpanel21.json">
         <button slot="activate">Install firmware</button>
         <span slot="unsupported" class="unsupported">This browser cannot talk to USB devices.
@@ -77,6 +84,19 @@
         right here. Press the reset button on its back and it will say what it is doing. That
         text in an <a href="https://github.com/kaohlive/homey-wallpanel/issues">issue</a> is
         worth more than any description of a black screen.</p>
+    </section>
+
+    <!-- Filled from changelog.json, which the release writes beside this page. Without it (an
+         older release, or no script) the section stays hidden rather than empty. -->
+    <section id="whats-new" hidden>
+      <h2>What's new</h2>
+      <ul class="changes" id="changes-recent"></ul>
+      <details id="changes-older-wrap" hidden>
+        <summary>Earlier versions</summary>
+        <ul class="changes" id="changes-older"></ul>
+      </details>
+      <p class="note">A panel that is already running gets these from Homey, on its device page.
+        This page is only for a panel that has never been flashed.</p>
     </section>
 
     <section>
@@ -112,5 +132,51 @@
        release that builds this page unpacks one pinned version of esp-web-tools, checks it
        against the hash npm published for it, and copies it in beside this file. -->
   <script type="module" src="vendor/esp-web-tools/install-button.js"></script>
+  <script>
+    // The version the Install button writes, from the same manifest it reads.
+    fetch('crowpanel21.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (m) {
+        if (m && m.version && m.version !== '0.0.0') {
+          document.getElementById('fw-version').textContent = ' · firmware ' + m.version;
+        }
+      })
+      .catch(function () {});
+
+    // What changed, newest first. Text only: nothing in the file is ever read as markup.
+    fetch('changelog.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (log) {
+        if (!log || typeof log !== 'object') return;
+        var versions = Object.keys(log).filter(function (v) {
+          return log[v] && typeof log[v].en === 'string';
+        });
+        if (!versions.length) return;
+        function item(v) {
+          var li = document.createElement('li');
+          var ver = document.createElement('span');
+          ver.className = 'ver';
+          ver.textContent = v;
+          li.appendChild(ver);
+          if (log[v].date) {
+            var date = document.createElement('span');
+            date.className = 'date';
+            date.textContent = log[v].date;
+            li.appendChild(date);
+          }
+          var text = document.createElement('p');
+          text.textContent = log[v].en;
+          li.appendChild(text);
+          return li;
+        }
+        var RECENT = 4;
+        versions.forEach(function (v, i) {
+          document.getElementById(i < RECENT ? 'changes-recent' : 'changes-older').appendChild(item(v));
+        });
+        if (versions.length > RECENT) document.getElementById('changes-older-wrap').hidden = false;
+        document.getElementById('whats-new').hidden = false;
+      })
+      .catch(function () {});
+  </script>
 </body>
 </html>
