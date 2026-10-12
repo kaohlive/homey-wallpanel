@@ -4,8 +4,9 @@ A €48 round touchscreen on the wall that drives a room in Homey: lights, the t
 moods, music, energy, an alarm clock, who is home. Swipe between cards, turn the ring to
 set a value, press the knob to switch.
 
-<img src="images/panel-colour.jpg" width="480" alt="A round panel showing a colour wheel for
-the living room lights: Mixed, turn to set them all, with buttons for dim, mode and warmth">
+<img src="images/panel-wall.jpg" width="640" alt="The round panel on a living room wall,
+in the wall box next to a socket, showing the living room lights at 60 per cent with buttons
+for dim, mode and warmth">
 
 <!-- A ninety-second demo belongs here. GitHub only plays a video that was uploaded through
      its own editor, so it cannot be committed to this repository: open this file on
@@ -103,8 +104,10 @@ In Homey, add a device from the Wear OS Controller app and pick your panel from 
 Then open **Repair** on that device to choose what it shows: a room, and the cards for it.
 Changes land on the wall within a few seconds.
 
-<img src="images/panel-warmth.jpg" width="380" alt="A card for the living room lights showing
-Warm, with the ring at 60 per cent and buttons for dim, mode and warmth">
+<img src="images/panel-warmth.jpg" width="320" alt="A card for the living room lights showing
+Warm, with the ring at 60 per cent and buttons for dim, mode and warmth"> <img
+src="images/panel-colour.jpg" width="320" alt="A round panel showing a colour wheel for the
+living room lights: Mixed, turn to set them all, with buttons for dim, mode and warmth">
 
 Firmware updates appear on the same device page, as a button. The panel downloads the image,
 checks it against a hash that came from Homey over a signed connection, and restarts.
@@ -126,6 +129,13 @@ differs is the screen driver, the touch controller and the pin map.
 base: a flush mount that drops into a wall box and makes its own 5 V behind the panel, or a stand
 that holds it on a desk and runs from a USB adapter. Twisting the cup off moves the same panel
 between them.
+
+On the wall it sits in an ordinary wall box, beside whatever was already there - here a socket.
+Only the panel itself stands out from the wall.
+
+<img src="images/panel-wall-angle.jpg" width="380" alt="The panel on the wall seen from an
+angle, beside a socket with a plug in it"> <img src="images/panel-wall-profile.jpg" width="250"
+alt="The panel seen from the side along the wall: the round panel in front of a flat cover plate">
 
 Designing your own? The [board page](boards/crowpanel21/README.md#dimensions-for-designing-your-own-enclosure)
 lists what an enclosure has to leave room for, and the parts come with their
