@@ -1,0 +1,38 @@
+{
+  "1.32.2": {
+    "date": "2026-10-12",
+    "en": "A panel whose key was revoked can be paired again with a new pairing code."
+  },
+  "1.32.1": {
+    "date": "2026-10-11",
+    "en": "The home alarm card ignores night mode, so its keypad stays readable in the dark."
+  },
+  "1.32.0": {
+    "date": "2026-10-11",
+    "en": "A home alarm card: a press arms the house, a code you set per card disarms it, and the screen turns red and pulses when a flow sets it off."
+  },
+  "1.31.0": {
+    "date": "2026-10-09",
+    "en": "Turning the knob moves between the buttons on a card, and pressing it presses the one that is highlighted."
+  },
+  "1.30.1": {
+    "date": "2026-10-09",
+    "en": "A tap on a button such as Snooze or Off reaches Homey again."
+  },
+  "1.30.0": {
+    "date": "2026-10-08",
+    "en": "Night mode, for a panel beside a bed: dim colours at the lowest brightness, and no moving to the next card. Each card can have its own text colour."
+  },
+  "1.29.1": {
+    "date": "2026-10-08",
+    "en": "Starts on boards whose flash chip is not the usual brand, instead of staying dark."
+  },
+  "1.29.0": {
+    "date": "2026-10-05",
+    "en": "The panel keeps no copy of the shared key, and a removed or revoked panel reaches nothing at all."
+  },
+  "1.28.0": {
+    "date": "2026-10-04",
+    "en": "Each panel gets a key of its own, so a panel taken off the wall only reaches the devices on its own cards."
+  }
+}
