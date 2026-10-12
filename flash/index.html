@@ -5,23 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Flash a Homey wall panel</title>
   <style>
+    /* Taken from the panel on a wall: a warm white wall, the black bezel, and the blue of the
+       ring on its screen. In the dark the page turns into the screen itself. */
     :root {
-      --ink: #14161a;
-      --ink-soft: #5c636d;
-      --ground: #ffffff;
-      --raised: #f5f7f9;
-      --line: #e2e6ea;
-      --accent: #1e6fd9;
+      --ink: #17191c;
+      --ink-soft: #5f646b;
+      --ground: #f4f0ea;
+      --raised: #fbf9f6;
+      --line: #e3ddd4;
+      --accent: #0a6fd6;
+      --ring: #1a8cff;
+      --bezel: #141619;
+      --on-accent: #ffffff;
       color-scheme: light dark;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --ink: #eef1f4;
         --ink-soft: #9aa2ac;
-        --ground: #15171a;
-        --raised: #1d2024;
-        --line: #2c3036;
-        --accent: #5aa7ff;
+        --ground: #0d0f12;
+        --raised: #16191d;
+        --line: #262a30;
+        --accent: #4aa8ff;
+        --ring: #1a8cff;
+        --bezel: #000000;
+        --on-accent: #06121f;
       }
     }
     * { box-sizing: border-box; }
@@ -40,9 +48,27 @@
     p:last-child { margin-bottom: 0; }
     .lead { color: var(--ink-soft); }
     a { color: var(--accent); }
-    .board {
-      background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 20px;
+    .hero {
+      margin: 0; border-radius: 18px; overflow: hidden; background: var(--raised);
+      box-shadow: 0 1px 0 var(--line), 0 12px 32px -18px rgba(0, 0, 0, 0.35);
     }
+    .hero img { display: block; width: 100%; height: auto; }
+    .board {
+      background: var(--raised); border: 1px solid var(--line); border-radius: 18px; padding: 20px;
+      /* The ring on the panel's screen, as a thin arc along the top of the card. */
+      background-image: linear-gradient(90deg, var(--ring), transparent 70%);
+      background-size: 100% 3px; background-repeat: no-repeat;
+    }
+    /* Shaped like the highlighted button on the panel itself. */
+    esp-web-install-button button[slot="activate"] {
+      font-family: inherit; font-size: 17px; font-weight: 600; line-height: 1;
+      color: var(--on-accent); background: var(--accent);
+      border: 0; border-radius: 12px; padding: 14px 22px; cursor: pointer;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 25%, transparent);
+    }
+    esp-web-install-button button[slot="activate"]:hover { filter: brightness(1.08); }
+    esp-web-install-button button[slot="activate"]:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+    .changes .ver { color: var(--accent); }
     .board .meta { color: var(--ink-soft); font-size: 15px; margin-bottom: 16px; }
     ol { margin: 0; padding-left: 20px; }
     li + li { margin-top: 6px; }
@@ -63,6 +89,11 @@
 </head>
 <body>
   <div class="wrap">
+    <figure class="hero">
+      <img src="panel-wall.jpg" width="1600" height="1074" alt="A round wall panel beside a
+        socket, showing the living room lights at 60 per cent with buttons for dim, mode and warmth">
+    </figure>
+
     <header>
       <h1>Flash a Homey wall panel</h1>
       <p class="lead">Plug the panel into this computer with the cable that came with it and press Install.
