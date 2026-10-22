@@ -1,0 +1,134 @@
+{
+  "1.33.5": {
+    "date": "2026-10-22",
+    "en": "Security: the panel now refuses an expired or not yet valid certificate on its encrypted connection to Homey, and never goes back to unencrypted once encryption has worked. A restart notice that Homey did not accept is sent again."
+  },
+  "1.33.4": {
+    "date": "2026-10-22",
+    "en": "After every start the panel tells Homey why it started (power on, update, crash, watchdog, ...), so a flow can let you know when a panel restarts unexpectedly."
+  },
+  "1.33.3": {
+    "date": "2026-10-22",
+    "en": "A press that has not reached Homey yet is dropped when you swipe to another card, instead of acting on the device of the new card. Values that arrive late no longer land on the wrong card."
+  },
+  "1.33.2": {
+    "date": "2026-10-22",
+    "en": "On the update screen a press on the knob restarts the panel, so a download that hangs or fails is easy to get out of; Homey then starts the update again."
+  },
+  "1.33.1": {
+    "date": "2026-10-22",
+    "en": "A firmware update no longer fails at 0% on a panel that has been running for a long time; a failed download now says why."
+  },
+  "1.33.0": {
+    "date": "2026-10-22",
+    "en": "The panel talks to Homey over Homey's own encrypted connection (HTTPS), with no switch to turn it off. Fixes the stripes on the screen during network traffic: the screen is driven slightly slower and the panel talks less to Homey. Sums up 1.32.7 to 1.32.27."
+  },
+  "1.32.27": {
+    "date": "2026-10-21",
+    "en": "The screen is driven slightly slower, which leaves more room during network traffic and should reduce stripes on the screen."
+  },
+  "1.32.26": {
+    "date": "2026-10-21",
+    "en": "The panel talks less to Homey: it fetches its configuration only when something changed (and every ten minutes as a check) instead of every minute, which keeps the screen smoother. Wi-Fi transmit power is back to its normal level."
+  },
+  "1.32.25": {
+    "date": "2026-10-21",
+    "en": "The panel transmits on Wi-Fi with a little less power, which may reduce stripes on the screen during network traffic. The panel page shows the transmit power."
+  },
+  "1.32.23": {
+    "date": "2026-10-21",
+    "en": "The panel page now also shows how often the panel has had to reconnect securely to Homey, to help find the cause of stripes on the screen."
+  },
+  "1.32.20": {
+    "date": "2026-10-21",
+    "en": "Fixes the stripes on the screen that came every few seconds and got worse over time: a memory measurement for the device page disturbed the display. It is now taken once every five minutes."
+  },
+  "1.32.18": {
+    "date": "2026-10-21",
+    "en": "With the temporary HTTPS test switch off, the panel now also gives back the memory it reserves for the encrypted connection; switching it restarts the panel."
+  },
+  "1.32.17": {
+    "date": "2026-10-21",
+    "en": "A temporary switch on the panel's device page turns the encrypted connection off and on, to help find the cause of stripes on the screen."
+  },
+  "1.32.16": {
+    "date": "2026-10-21",
+    "en": "No more stripes after using a control that sends many commands, such as the warmth ring: a reconnection to Homey always gets the fast memory back. The device page shows where that memory is."
+  },
+  "1.32.15": {
+    "date": "2026-10-21",
+    "en": "No more stripes that came back after a while: the memory the encrypted connection works in is set aside when the panel starts, so it never has to make do with the slow memory later."
+  },
+  "1.32.14": {
+    "date": "2026-10-21",
+    "en": "No more regular stripes on the screen: the encrypted connection keeps the memory it uses for every message in the fast working memory again, and only its one-off start-up work in the large memory."
+  },
+  "1.32.13": {
+    "date": "2026-10-21",
+    "en": "Fixes a panel that restarted by itself now and then, with a flickering screen, while reading an answer from Homey over the encrypted connection. The encrypted connection now keeps its buffers in the large memory, leaving the panel's working memory for its cards."
+  },
+  "1.32.11": {
+    "date": "2026-10-21",
+    "en": "The encrypted connection to Homey is opened once and kept, instead of anew every few seconds: the screen no longer flickers and the connection no longer drops out."
+  },
+  "1.32.10": {
+    "date": "2026-10-20",
+    "en": "A panel that loses its encrypted connection to Homey finds its way back by itself, by restarting if it has to - it never falls back to an unencrypted connection once the encrypted one has worked."
+  },
+  "1.32.8": {
+    "date": "2026-10-20",
+    "en": "The panel talks to Homey over Homey's own HTTPS, so nobody on your network can read what goes back and forth. It switches by itself once Homey has the app version that names the address. An update that fails no longer leaves the panel on the failure screen: it returns to its cards and tries again five minutes later."
+  },
+  "1.32.6": {
+    "date": "2026-10-14",
+    "en": "The alarm code a panel sends is now covered by its signature, so nobody on the network can turn a right code into a wrong one."
+  },
+  "1.32.5": {
+    "date": "2026-10-13",
+    "en": "The alarm card shows \"Arming...\" until Homey confirms, goes back to off when arming did not get through, and says so when it has not heard from Homey for a while."
+  },
+  "1.32.4": {
+    "date": "2026-10-12",
+    "en": "When Homey does not carry out a press, the panel says why for a few seconds instead of nothing. A mood can be applied again by pressing it once more."
+  },
+  "1.32.3": {
+    "date": "2026-10-12",
+    "en": "A card follows changes to its choices and ranges without a restart: a mood added to the room, a renamed choice, a new limit or a colour set from a flow now shows within seconds."
+  },
+  "1.32.2": {
+    "date": "2026-10-12",
+    "en": "A panel whose key was revoked can be paired again with a new pairing code."
+  },
+  "1.32.1": {
+    "date": "2026-10-11",
+    "en": "The home alarm card ignores night mode, so its keypad stays readable in the dark."
+  },
+  "1.32.0": {
+    "date": "2026-10-11",
+    "en": "A home alarm card: a press arms the house, a code you set per card disarms it, and the screen turns red and pulses when a flow sets it off."
+  },
+  "1.31.0": {
+    "date": "2026-10-09",
+    "en": "Turning the knob moves between the buttons on a card, and pressing it presses the one that is highlighted."
+  },
+  "1.30.1": {
+    "date": "2026-10-09",
+    "en": "A tap on a button such as Snooze or Off reaches Homey again."
+  },
+  "1.30.0": {
+    "date": "2026-10-08",
+    "en": "Night mode, for a panel beside a bed: dim colours at the lowest brightness, and no moving to the next card. Each card can have its own text colour."
+  },
+  "1.29.1": {
+    "date": "2026-10-08",
+    "en": "Starts on boards whose flash chip is not the usual brand, instead of staying dark."
+  },
+  "1.29.0": {
+    "date": "2026-10-05",
+    "en": "The panel keeps no copy of the shared key, and a removed or revoked panel reaches nothing at all."
+  },
+  "1.28.0": {
+    "date": "2026-10-04",
+    "en": "Each panel gets a key of its own, so a panel taken off the wall only reaches the devices on its own cards."
+  }
+}
